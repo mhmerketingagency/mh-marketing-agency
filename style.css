@@ -72,7 +72,6 @@ nav a:hover{
 }
 
 /* Hero */
-
 .hero{
     height:100vh;
     display:flex;
@@ -81,14 +80,16 @@ nav a:hover{
     text-align:center;
     padding:120px 20px;
     background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-    url("https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600");
+    linear-gradient(rgba(10,25,47,0.75), rgba(0,0,0,0.75)),
+    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
     background-size:cover;
     background-position:center;
+    background-attachment:fixed;
+    color:#fff;
 }
-
-.hero-content{
-    max-width:800px;
+t{
+    max-width:8
+.hero-conten00px;
 }
 
 .hero h1{
