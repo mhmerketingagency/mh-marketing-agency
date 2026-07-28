@@ -1,58 +1,50 @@
-// Smooth scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
+// ==============================
+// MH MARKETING AGENCY
+// Premium JavaScript
+// ==============================
 
-    const target = document.querySelector(this.getAttribute('href'));
+// Smooth scroll for menu links
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
 
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  });
+        const target = document.querySelector(this.getAttribute('href'));
+
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
 });
 
-// Fade-in animation on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
+// Scroll animation
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
 });
 
-document.querySelectorAll("section").forEach(section => {
-  section.classList.add("hidden");
-  observer.observe(section);
+document.querySelectorAll("section").forEach(section=>{
+    section.classList.add("hidden");
+    observer.observe(section);
 });
 
-// Back to top button
-const topBtn = document.createElement("button");
-topBtn.innerHTML = "↑";
-topBtn.id = "topBtn";
-document.body.appendChild(topBtn);
+// Contact Form
+const form = document.querySelector("form");
 
-topBtn.style.position = "fixed";
-topBtn.style.bottom = "20px";
-topBtn.style.right = "20px";
-topBtn.style.padding = "12px 16px";
-topBtn.style.border = "none";
-topBtn.style.borderRadius = "50%";
-topBtn.style.cursor = "pointer";
-topBtn.style.display = "none";
+if(form){
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    topBtn.style.display = "block";
-  } else {
-    topBtn.style.display = "none";
-  }
+form.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+alert("Thank you! Your request has been received. MH Marketing Agency will contact you soon.");
+
+form.reset();
+
 });
 
-topBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
+}
